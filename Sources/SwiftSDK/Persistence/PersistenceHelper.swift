@@ -234,12 +234,7 @@ class PersistenceHelper {
     }
     
     func dictionaryToEntity(_ dictionary: [String: Any], className: String) -> Any? {
-        
-        let convertedEntity = convertToBLType(dictionary)
-        if !(convertedEntity is [String : Any]) {
-            return convertedEntity
-        }
-        
+                
         var entityClassNameWithModule = className
         let classMappings = Mappings.shared.getTableToClassMappings()
         if classMappings.keys.contains(className) {
